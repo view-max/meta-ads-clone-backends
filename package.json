@@ -1,0 +1,14 @@
+{
+  "name": "meta-ads-clone-backend",
+  "version": "1.0.0",
+  "description": "Self-serve ad network API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.1",
+    "cors": "^2.8.5"
+  }
+}
