@@ -14,21 +14,14 @@
             --meta-border: #e4e6eb;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--meta-bg); color: var(--meta-text); }
+        body { background-color: var(--meta-bg); color: var(--meta-text); padding-bottom: 50px; }
         
-        /* Premium Meta Header bar */
+        /* Meta Header bar */
         .meta-navbar { background: #fff; border-bottom: 1px solid var(--meta-border); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
         .meta-logo { display: flex; align-items: center; gap: 8px; font-weight: bold; color: var(--meta-blue); font-size: 1.3rem; }
-        .meta-logo svg { width: 24px; height: 24px; }
         .user-pill { background: #f0f2f5; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; color: var(--meta-muted); }
 
         .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
-
-        /* Meta Analytics Overview Grid */
-        .analytics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
-        .stat-card { background: var(--meta-card); border: 1px solid var(--meta-border); border-radius: 8px; padding: 15px; text-align: left; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .stat-card p { font-size: 0.8rem; color: var(--meta-muted); font-weight: 600; text-transform: uppercase; }
-        .stat-card h3 { font-size: 1.4rem; margin-top: 5px; color: #000; }
 
         /* Professional Work Cards */
         .meta-card { background: var(--meta-card); border: 1px solid var(--meta-border); border-radius: 8px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-bottom: 20px; }
@@ -36,28 +29,31 @@
         
         .form-group { margin-bottom: 16px; }
         label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--meta-text); margin-bottom: 6px; }
-        input, select { width: 100%; border: 1px solid #ccd0d5; padding: 12px; border-radius: 6px; font-size: 0.95rem; background: #f5f6f7; color: var(--meta-text); transition: border 0.2s; }
+        input, select { width: 100%; border: 1px solid #ccd0d5; padding: 12px; border-radius: 6px; font-size: 0.95rem; background: #f5f6f7; color: var(--meta-text); }
         input:focus, select:focus { border-color: var(--meta-blue); background: #fff; outline: none; }
         
-        /* Custom Gallery Button Style */
-        .file-label { display: block; text-align: center; background: #e4e6eb; color: #000; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; border: 1px dashed #ced0d4; transition: background 0.2s; }
-        .file-label:hover { background: #d8dadf; }
+        /* Gallery Button Style */
+        .file-label { display: block; text-align: center; background: #e4e6eb; color: #000; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; border: 1px dashed #ced0d4; }
         input[type="file"] { display: none; }
-        
-        /* Image Live Preview Screen Container */
         .preview-box { display: none; margin-top: 10px; width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--meta-border); }
 
         .meta-btn { width: 100%; background: var(--meta-blue); color: white; border: none; padding: 12px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .meta-btn:hover { background: #166fe5; }
         
         .status-msg { margin-top: 15px; padding: 12px; border-radius: 6px; font-size: 0.9rem; display: none; font-weight: 500; }
         .success { background: #e7f3ff; color: var(--meta-blue); border: 1px solid #ccd0d5; }
         .error { background: #ffebe9; color: #ce1126; border: 1px solid #ffccd0; }
+
+        /* NEW: Ads Feed List Styles */
+        .ad-item { border: 1px solid var(--meta-border); border-radius: 8px; padding: 15px; margin-bottom: 15px; background: #fff; }
+        .ad-item h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--meta-text); }
+        .ad-item p { font-size: 0.85rem; color: var(--meta-muted); margin-bottom: 10px; word-break: break-all; }
+        .ad-item img { width: 100%; max-height: 250px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; border: 1px solid var(--meta-border); }
+        .ad-badge { inline-size: max-content; background: #e7f3ff; color: var(--meta-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+        .no-ads { text-align: center; color: var(--meta-muted); padding: 20px; font-size: 0.95rem; }
     </style>
 </head>
 <body>
 
-    <!-- Meta Native Header Bar Navigation -->
     <div class="meta-navbar">
         <div class="meta-logo">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -68,22 +64,6 @@
 
     <div class="container">
         
-        <!-- Live Performance Metrics Tracker Row -->
-        <div class="analytics-grid">
-            <div class="stat-card">
-                <p>Total Reach</p>
-                <h3>0</h3>
-            </div>
-            <div class="stat-card">
-                <p>Link Clicks</p>
-                <h3>0</h3>
-            </div>
-            <div class="stat-card">
-                <p>Amount Spent</p>
-                <h3>₦0.00</h3>
-            </div>
-        </div>
-
         <!-- Create Ad Setup Layout Section -->
         <div class="meta-card">
             <h2>📢 Create Automated Ad Campaign</h2>
@@ -97,7 +77,6 @@
                     <input type="url" id="targetLink" placeholder="https://wa.me/234..." required>
                 </div>
                 
-                <!-- NEW Gallery Image Upload Picker -->
                 <div class="form-group">
                     <label>Marketing Banner Image</label>
                     <label for="imageFile" class="file-label" id="fileLabelText">🖼️ Choose Photo from Gallery</label>
@@ -117,25 +96,31 @@
             </form>
             <div id="status" class="status-msg"></div>
         </div>
+
+        <!-- NEW: Active Ads Display Section -->
+        <div class="meta-card">
+            <h2>📁 Your Posted Live Ads Feed</h2>
+            <div id="adsFeed">
+                <div class="no-ads">Loading your campaigns from the cloud...</div>
+            </div>
+        </div>
+
     </div>
 
     <script>
         const BACKEND_URL = 'https://meta-ads-clone-backends.onrender.com';
         let base64ImageString = "";
 
-        // Handles gallery file picker processing selection logic
+        // Handle gallery file picker
         document.getElementById('imageFile').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
-                // Limit file size size to under 2MB to keep MongoDB cloud usage fast and stable
                 if (file.size > 2 * 1024 * 1024) {
-                    alert("⚠️ Photo size is too large! Please pick an image smaller than 2MB.");
+                    alert("⚠️ Photo size too large! Choose an image under 2MB.");
                     this.value = "";
                     return;
                 }
-
                 document.getElementById('fileLabelText').innerText = `✅ Chosen: ${file.name}`;
-                
                 const reader = new FileReader();
                 reader.onloadend = function() {
                     base64ImageString = reader.result;
@@ -147,24 +132,54 @@
             }
         });
 
+        // Function to FETCH and DISPLAY ads from your database
+        async function loadAdsFeed() {
+            const feedContainer = document.getElementById('adsFeed');
+            try {
+                const response = await fetch(`${BACKEND_URL}/api/ads`);
+                const result = await response.json();
+
+                if (result.success && result.data.length > 0) {
+                    feedContainer.innerHTML = ''; // Clear loading text
+                    result.data.forEach(ad => {
+                        const adCard = document.createElement('div');
+                        adCard.className = 'ad-item';
+                        adCard.innerHTML = `
+                            <div class="ad-badge">🟢 ${ad.status || 'Active'}</div>
+                            <h3 style="margin-top: 8px;">${ad.title}</h3>
+                            <p><strong>Target Link:</strong> <a href="${ad.targetLink}" target="_blank" style="color: var(--meta-blue); text-decoration: none;">${ad.targetLink}</a></p>
+                            <p><strong>Target Country:</strong> ${ad.targetCountry}</p>
+                            ${ad.imageUrl ? `<img src="${ad.imageUrl}" alt="Ad Image">` : ''}
+                        `;
+                        feedContainer.appendChild(adCard);
+                    });
+                } else {
+                    feedContainer.innerHTML = '<div class="no-ads">No posted ads found yet. Launch a campaign above!</div>';
+                }
+            } catch (err) {
+                feedContainer.innerHTML = `<div class="no-ads" style="color: red;">❌ Failed to load ads: ${err.message}</div>`;
+            }
+        }
+
+        // Handle Form Submission
         document.getElementById('adForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const submitBtn = document.getElementById('submitBtn');
             const statusDiv = document.getElementById('status');
             
             if(!base64ImageString) {
-                alert("Please wait for your gallery photo to process completely.");
+                alert("Please select a photo first.");
                 return;
             }
 
-            submitBtn.innerText = 'Publishing to Meta Network...';
+            submitBtn.innerText = 'Publishing...';
             submitBtn.disabled = true;
             statusDiv.style.display = 'none';
 
             const adData = {
                 title: document.getElementById('title').value,
                 targetLink: document.getElementById('targetLink').value,
-                imageUrl: base64ImageString, // Sends image data safely encoded as a clean data string
+                imageUrl: base64ImageString,
                 targetCountry: document.getElementById('targetCountry').value
             };
 
@@ -175,27 +190,31 @@
                     body: JSON.stringify(adData)
                 });
 
-                const result = await response.json();
-
                 if (response.ok) {
                     statusDiv.className = 'status-msg success';
-                    statusDiv.innerText = '💪 Campaign published live! Data synced cleanly into MongoDB Cloud Cluster.';
+                    statusDiv.innerText = '💪 Campaign published live!';
                     document.getElementById('adForm').reset();
                     document.getElementById('imagePreview').style.display = 'none';
                     document.getElementById('fileLabelText').innerText = '🖼️ Choose Photo from Gallery';
                     base64ImageString = "";
+                    
+                    // Reload the feed instantly to show the new ad!
+                    loadAdsFeed();
                 } else {
-                    throw new Error(result.message || 'Server rejected creation database sync.');
+                    throw new Error('Server database rejected sync.');
                 }
             } catch (err) {
                 statusDiv.className = 'status-msg error';
-                statusDiv.innerText = `❌ Error Publishing: ${err.message}`;
+                statusDiv.innerText = `❌ Error: ${err.message}`;
             } finally {
                 submitBtn.innerText = 'Publish Campaign';
                 submitBtn.disabled = false;
                 statusDiv.style.display = 'block';
             }
         });
+
+        // Load the ads automatically when the page opens
+        window.onload = loadAdsFeed;
     </script>
 </body>
 </html>
