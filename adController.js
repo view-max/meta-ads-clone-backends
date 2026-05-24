@@ -1,4 +1,4 @@
-const Ad = require('./Ad');
+const Ad = require('./ad');
 
 // The engine function that finds the right ad for a visitor
 exports.getAdForUser = async (req, res) => {
